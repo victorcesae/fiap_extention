@@ -1,0 +1,25 @@
+html {
+    min-height: 10em;
+    min-width: 20em;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    text-indent: 0px;
+    padding: 10px;
+}
+
+li:hover {
+    background-color: #4e6bec;
+    color: white;
+}
