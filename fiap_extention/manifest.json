@@ -3,17 +3,18 @@
   "description": "Utilitarios para facilitar a vida na FIAP",
   "version": "1.0",
   "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "fiap.html",
     "default_icon": "favicon.png"
   },
-  "content_scripts": [{
-    "js": ["content.js"],
-    "matches": ["*://*.fiap.com.br/*", "*://*.fiap.com/*"]
-  }],
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "tabs"
-  ]
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["*://*.fiap.com.br/*", "*://*.fiap.com/*"]
+    }
+  ],
+  "permissions": ["activeTab", "storage", "scripting", "tabs"]
 }

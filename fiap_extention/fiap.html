@@ -1,22 +1,40 @@
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="fiap.css">
-	</head>
-	<body>
-		<h2>FIAP Hack Tools</h2>
 
-		<nav>
-			<ul>
-				<li id="hack-copypast" title="Desbloqueia copia e cola nos Fast Tests, podendo copiar e colar a questão inteira no chatGPT por exemplo...">
-					Desbloquear copia e cola
-				</li>
-				<li id="hack-videolist" title="Marca como visualizado todos os vídeos de uma videolist">
-					Visualizar todos os videos
-				</li>
-			</ul>
-		</nav>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="fiap.css">
+</head>
 
-		<script src="popup.js"></script>
-	</body>
+<body>
+	<h2>FIAP Hack Tools</h2>
+
+	<nav>
+		<ul>
+			<li id="hack-copypast"
+				title="Desbloqueia copia e cola nos Fast Tests, podendo copiar e colar a questão inteira no chatGPT por exemplo...">
+				Desbloquear copia e cola
+				<div id="hack-copypast-container" class="container-progress-bar hidden">
+					<div id="hack-copypast-progress" class="progress-bar">0%</div>
+				</div>
+			</li>
+			<li id="hack-videolist" title="Marca como visualizado todos os vídeos de uma videolist">
+				Visualizar todos os videos
+				<div id="hack-videolist-container" class="container-progress-bar hidden">
+					<div id="hack-videolist-progress" class="progress-bar">0%</div>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<div class="separator"></div>
+	<div class="showIndicators-wrapper">
+		<input id="showIndicators" type="checkbox" value="" checked>
+		<label for="showIndicators"
+			class="showIndicators-label ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mostrar indicadores
+			de carregamento</label>
+	</div>
+
+
+	<script src="popup.js"></script>
+</body>
+
 </html>
