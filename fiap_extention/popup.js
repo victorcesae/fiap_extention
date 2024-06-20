@@ -96,6 +96,22 @@ const extension_copypast = () => {
         dom.body.removeAllListeners();
       }
 
+      function handleCopyEvent() {
+        const selectedText = window.getSelection().toString();
+
+        // Use navigator.clipboard.writeText instead of copyTextArea
+        navigator.clipboard
+          .writeText(selectedText)
+          .then(() => {
+            console.log("Text copied to clipboard!");
+          })
+          .catch((error) => {
+            console.error("Error copying text:", error);
+          });
+      }
+
+      dom.addEventListener("copy", handleCopyEvent);
+
       questions = dom.querySelectorAll(".on-fast-test-item");
 
       Array.from(questions).map((question) => {
