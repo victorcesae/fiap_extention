@@ -10,10 +10,12 @@ function current_tab() {
 
 async function send_payload(tab, payload, isCopy) {
   const progressBar = document.querySelector(
-    `#${isCopy ? "hack-copypast" : "hack-videolist"} .progress-bar`
+    `#${isCopy ? "extension-copypast" : "extension-videolist"} .progress-bar`
   );
   const containerProgressBar = document.querySelector(
-    `#${isCopy ? "hack-copypast" : "hack-videolist"} .container-progress-bar`
+    `#${
+      isCopy ? "extension-copypast" : "extension-videolist"
+    } .container-progress-bar`
   );
   const toggleContainerHidden = (active) => {
     if (containerProgressBar)
@@ -70,15 +72,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (showIndicatorsInput) showIndicatorsInput.checked = showIndicators;
 });
 
-document.querySelector("#hack-copypast").onclick = () => {
-  send_payload(currentTab, hack_copypast, true);
+document.querySelector("#extension-copypast").onclick = () => {
+  send_payload(currentTab, extension_copypast, true);
 };
 
-document.querySelector("#hack-videolist").onclick = () => {
-  send_payload(currentTab, hack_videolist, false);
+document.querySelector("#extension-videolist").onclick = () => {
+  send_payload(currentTab, extension_videolist, false);
 };
 
-const hack_copypast = () => {
+const extension_copypast = () => {
   function desbloqueia(dom) {
     if (!dom) return;
 
@@ -129,7 +131,7 @@ const hack_copypast = () => {
   }
 };
 
-const hack_videolist = async () => {
+const extension_videolist = async () => {
   var id_curso = location.search?.split("c=")?.[1]?.split("&")?.[0];
   var cm = location.search?.split("id=")?.[1]?.split("&")?.[0];
   let videos = document.querySelectorAll(".conteudo-video-list-item");

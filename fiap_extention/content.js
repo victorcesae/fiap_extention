@@ -1,4 +1,4 @@
-console.log("FIAP Hack Tools iniciado!");
+console.log("FIAP Tools iniciado!");
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -35,7 +35,7 @@ async function createProgressBar() {
   wrapper.style.flexDirection = "column";
   wrapper.style.alignItems = "center";
   wrapper.style.justifyContent = "center";
-  wrapper.textContent = "Analisando Perguntas com FIAP Hacker";
+  wrapper.textContent = "Analisando Perguntas com FIAP";
   const { showIndicators } = await chrome.storage.local.get("showIndicators");
   if (!showIndicators) wrapper.style.display = "none";
   // Create container
