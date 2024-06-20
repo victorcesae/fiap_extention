@@ -35,7 +35,7 @@ async function createProgressBar() {
   wrapper.style.flexDirection = "column";
   wrapper.style.alignItems = "center";
   wrapper.style.justifyContent = "center";
-  wrapper.textContent = "Analisando Perguntas com FIAP Hacker";
+  wrapper.textContent = "Analisando perguntas com o FIAP Extention";
   const { showIndicators } = await chrome.storage.local.get("showIndicators");
   if (!showIndicators) wrapper.style.display = "none";
   // Create container
